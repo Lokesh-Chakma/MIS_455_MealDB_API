@@ -133,3 +133,98 @@ else{
 showAllBtn.classList.add("hidden");
 }
 }
+
+function displayMeals(meals){
+mealContainer.innerHTML="";
+meals.forEach(meal=>{
+const card=document.createElement("div");
+card.className="meal-card";
+card.innerHTML=`
+<div class="card-image">
+<img src="${meal.strMealThumb}">
+</div>
+<div class="card-content">
+<h3>
+${meal.strMeal}
+</h3>
+<p>
+${meal.strCategory || "Cuisine"} 
+•
+${meal.strArea || "International"}
+</p>
+<p>
+${meal.strInstructions.substring(0,120)}...
+</p>
+<div class="card-meta">
+<span>
+ID ${meal.idMeal}
+</span>
+<span>
+ Save
+</span>
+</div>
+<div class="view-btn" onclick="openRecipe('${meal.idMeal}')">
+View Recipe 
+</div>
+</div>
+`;
+mealContainer.appendChild(card);
+});
+}
+
+showAllBtn.addEventListener("click",()=>{
+displayMeals(allMeals);
+showAllBtn.classList.add("hidden");
+});
+
+window.openRecipe = async function(id){
+const response = await fetch(
+`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+);
+const data = await response.json();
+const meal=data.meals[0];
+modalImage.src=meal.strMealThumb;
+modalTitle.innerText=meal.strMeal;
+modalMeta.innerText=
+`${meal.strCategory} • ${meal.strArea}`;
+modalDescription.innerText=
+`A delicious ${meal.strMeal} recipe inspired by traditional cooking methods.`;
+const steps = meal.strInstructions.split(".");
+modalInstructions.innerHTML="";
+steps.forEach((step,index)=>{
+if(step.trim()){
+modalInstructions.innerHTML+=`
+<p>
+<b>${index+1}.</b> ${step.trim()}.
+</p>
+`;
+}
+});
+recipeModal.style.display="flex";
+}
+closeModal.onclick=()=>{
+recipeModal.style.display="none";
+}
+window.onclick=(e)=>{
+if(e.target===recipeModal){
+recipeModal.style.display="none";
+}
+}
+
+function showLoading(){
+mealContainer.innerHTML=`
+<h3 style="text-align:center">
+Discovering recipes...
+</h3>
+`;
+showAllBtn.classList.add("hidden");
+}
+function showError(){
+mealContainer.innerHTML=`
+<h3 style="text-align:center">
+Unable to load recipes
+</h3>
+`;
+}
+
+loadPopularMeals();
