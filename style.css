@@ -136,3 +136,291 @@ transition:.3s;
 background:white;
 color:#111;
 }
+
+
+/*=====DISCOVER=====*/
+
+.discover{
+padding:100px 7%;
+
+}
+.section-header{
+text-align:center;
+}
+.section-header h2{
+font-size:55px;
+}
+.section-header p{
+margin-top:15px;
+color:#777;
+}
+
+/*  =======SEARCH======= */
+
+.search-wrapper{
+display:flex;
+justify-content:center;
+margin:50px 0;
+}
+.search-box{
+width:720px;
+max-width:100%;
+display:flex;
+align-items:center;
+padding:8px;
+background:
+rgba(255,255,255,.55);
+backdrop-filter:blur(25px);
+border-radius:60px;
+border:
+1px solid rgba(255,255,255,.5);
+box-shadow:
+0 20px 50px rgba(0,0,0,.08);
+}
+.search-box span{
+font-size:30px;
+padding-left:20px;
+}
+.search-box input{
+flex:1;
+border:none;
+outline:none;
+background:transparent;
+padding:18px;
+font-size:16px;
+}
+.search-box button{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#111;
+color:white;
+cursor:pointer;
+}
+
+/*  =======CATEGORY GLASS BUTTONS======= */
+
+.categories{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+margin-bottom:60px;
+}
+.category-btn{
+padding:14px 35px;
+border-radius:50px;
+background:
+rgba(255,255,255,.25);
+backdrop-filter:
+blur(20px);
+border:
+1px solid rgba(255,255,255,.5);
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+}
+.category-btn:hover,
+.category-btn.active{
+background:#111;
+color:white;
+transform:translateY(-4px);
+}
+
+/* ======MEAL CARDS======= */
+
+.meal-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+.meal-card{
+height:520px;
+position:relative;
+border-radius:35px;
+overflow:hidden;
+box-shadow:
+0 25px 60px rgba(0,0,0,.15);
+}
+.card-image{
+height:100%;
+width:100%;
+}
+.card-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.6s;
+}
+.meal-card:hover img{
+transform:scale(1.08);
+}
+.card-content{
+position:absolute;
+bottom:20px;
+left:20px;
+right:20px;
+padding:28px;
+color:white;
+background:
+rgba(255,255,255,.10);
+backdrop-filter:
+blur(12px);
+-webkit-backdrop-filter:
+blur(12px);
+border:
+1px solid rgba(255,255,255,.25);
+border-radius:30px;
+box-shadow:
+0 15px 40px rgba(0,0,0,.2);
+}
+.card-content h3{
+font-size:32px;
+}
+.card-content p{
+margin-top:10px;
+line-height:1.5;
+}
+.card-meta{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+font-size:14px;
+}
+.view-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+border-radius:40px;
+background:
+rgba(255,255,255,.25);
+backdrop-filter:blur(15px);
+border:
+1px solid rgba(255,255,255,.4);
+color:white;
+}
+
+/*  ========SHOW ALL======== */
+
+.show-all{
+display:block;
+margin:60px auto;
+padding:16px 45px;
+border-radius:50px;
+background:
+rgba(255,255,255,.25);
+backdrop-filter:
+blur(20px);
+border:
+1px solid rgba(255,255,255,.5);
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+.show-all:hover{
+background:#111;
+color:white;
+transform:translateY(-5px);
+}
+.hidden{
+display:none;
+}
+
+/*  ========RECIPE PANEL======== */
+
+.recipe-modal{
+position:fixed;
+inset:0;
+background:
+rgba(0,0,0,.7);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:999;
+}
+.recipe-panel{
+background:white;
+width:750px;
+max-width:100%;
+max-height:90vh;
+overflow:auto;
+border-radius:35px;
+position:relative;
+}
+.modal-image{
+width:100%;
+height:380px;
+object-fit:cover;
+}
+.recipe-content{
+padding:40px;
+}
+.recipe-content h2{
+font-size:45px;
+}
+.recipe-content h3{
+margin-top:30px;
+font-size:28px;
+}
+.recipe-content p{
+line-height:1.8;
+color:#555;
+}
+.close-button{
+position:absolute;
+right:25px;
+top:20px;
+width:45px;
+height:45px;
+border-radius:50%;
+border:none;
+background:white;
+font-size:30px;
+cursor:pointer;
+z-index:2;
+}
+.save-button{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#111;
+color:white;
+}
+
+/*  ========FOOTER======== */
+
+footer{
+background:#111;
+color:white;
+padding:60px;
+text-align:center;
+}
+.footer-logo img{
+height:70px;
+}
+footer p{
+margin:20px;
+}
+.copyright{
+opacity:.5;
+}
+
+/*  =======MOBILE======= */
+
+@media(max-width:768px){
+.hero-content h1{
+font-size:55px;
+}
+.nav-links{
+display:none;
+}
+.brand img{
+height:55px;
+}
+.meal-card{
+height:450px;
+}
+}
