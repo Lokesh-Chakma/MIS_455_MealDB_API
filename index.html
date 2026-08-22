@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crave Culture | Discover Global Flavours</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ======HERO SECTION====== -->
+
+<header class="hero">
+
+<video class="hero-video" autoplay muted loop playsinline>
+
+<source src="images/2.mp4" type="video/mp4">
+
+</video>
+<div class="hero-overlay"></div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="brand">
+
+<img src="images/1.png" alt="Crave Culture Logo">
+
+</div>
+
+<div class="nav-links">
+
+<a href="#">Home</a>
+
+<a href="#discover">Discover</a>
+
+<a href="#about">About</a>
+
+</div>
+
+
+</nav>
+
+<!-- HERO CONTENT -->
+
+<div class="hero-content">
+
+<span class="welcome">
+
+WELCOME TO
+
+</span>
+
+<h1>
+
+Crave Culture
+
+</h1>
+
+<p>
+
+A journey through flavours, cultures, and unforgettable meals.
+
+</p>
+
+<a href="#discover" class="hero-button">
+
+Explore Cuisine
+
+</a>
+</div>
+
+</header>
+
+<section id="discover" class="discover">
+
+<div class="section-header">
+
+
+<h2>
+
+Discover Your Next Craving
+
+</h2>
+
+<p>
+
+Explore recipes from cultures around the world
+
+</p>
+
+</div>
+<!-- SEARCH -->
+<div class="search-wrapper">
+<div class="search-box">
+<span>
+
+⌕
+
+</span>
+<input
+
+id="searchInput"
+
+type="text"
+
+placeholder="Search dishes, cuisines, ingredients..."
+
+>
+
+<button id="searchBtn">
+
+Search
+
+</button>
+</div>
+
+</div>
+
+<!-- CATEGORY FILTERS -->
+<div class="categories">
+<button 
+class="category-btn active"
+data-type="all">
+
+All
+
+</button>
+
+<button
+
+class="category-btn"
+
+data-type="area"
+
+data-value="Italian">
+
+Italian
+
+</button>
+<button
+
+class="category-btn"
+
+data-type="area"
+
+data-value="Indian">
+
+Indian
+</button>
+<button
+
+class="category-btn"
+
+data-type="area"
+
+data-value="Japanese">
+
+Japanese
+
+</button>
+<button
+
+class="category-btn"
+
+data-type="category"
+
+data-value="Dessert">
+
+Dessert
+
+</button>
+
+<button
+
+class="category-btn"
+
+data-type="category"
+
+data-value="Seafood">
+
+Seafood
+
+</button>
+
+</div>
+
+<!-- MEAL CARDS -->
+
+<div id="mealContainer" class="meal-grid">
+
+</div>
+
+<button id="showAllBtn" class="show-all hidden">
+
+SHOW ALL RECIPES
+
+</button>
+</section>
+
+<div id="recipeModal" class="recipe-modal">
+<div class="recipe-panel">
+
+<button id="closeModal" class="close-button">
+
+×
+
+</button>
+
+<img id="modalImage" class="modal-image">
+
+<div class="recipe-content">
+
+<h2 id="modalTitle">
+
+</h2>
+
+<p id="modalMeta">
+
+</p>
+
+<div class="divider"></div>
+
+<h3>
+
+About This Recipe
+
+</h3>
+<p id="modalDescription"></p>
+
+<h3>
+
+Cooking Instructions
+
+</h3>
+
+<div id="modalInstructions">
+</div>
+<button class="save-button">
+♡ Save Recipe
+</button>
+</div>
+</div>
+
+</div>
+
+<footer id="about">
+
+<div class="footer-logo">
+
+<img src="images/1.png">
+
+</div>
+
+<p>
+
+Discover flavours. Explore cultures. Create memories.
+
+</p>
+
+<div class="copyright">
+
+© 2026 Crave Culture
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
